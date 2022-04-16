@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Shared/Navbar/Navbar';
+import Home from './components/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <h2>This is my Assignment project - 10</h2>
+      <Navbar></Navbar>
+      <Home></Home>
     </div>
   );
 }
