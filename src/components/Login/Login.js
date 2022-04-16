@@ -1,19 +1,53 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
+    const emailRef = useRef();
+    const passwordRef = useRef();
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+
+    const handleSignInWithEmailAndPassword = (e) => {
+        e.preventDefault();
+
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+
+        signInWithEmailAndPassword(email, password);
+    }
+
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+        }
+    }, [user])
+
+    if (error) {
+        console.error(error);
+    }
     return (
         <div className='flex items-center justify-center bg-gray-700 h-screen'>
-            <div className='md:w-1/4'>
+            <div className='md:w-1/4 w-3/4'>
 
                 <h2 className='text-lg font font-semibold mb-4 text-white'>Please Login</h2>
 
-                <form className=' bg-gray-500 p-6 shadow-xl rounded-md'>
+                <form onSubmit={handleSignInWithEmailAndPassword} className=' bg-gray-500 p-6 shadow-xl rounded-md'>
                     <div class="mb-6">
-                        <input type="email" id="email" class="bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Email" required />
+                        <input type="email" id="email" ref={emailRef} class="bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Email" required />
                     </div>
                     <div class="mb-6">
-                        <input type="password" id="password" class="bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder='Password' required />
+                        <input type="password" id="password" ref={passwordRef} class="bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder='Password' required />
                     </div>
                     <div class="flex items-start mb-6">
                         <div class="flex items-center h-5">
