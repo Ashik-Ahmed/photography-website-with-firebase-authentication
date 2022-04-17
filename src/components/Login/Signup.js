@@ -48,7 +48,7 @@ const Signup = () => {
         <div className='bg-gray-700 h-screen flex items-center justify-center'>
             <div className='md:w-1/4 mx-auto pt-6'>
                 <h1 className='text-lg font-semibold my-4 text-white'>Please Sign up</h1>
-                <form onSubmit={handleCreateUserWithEmailAndPassword} className='bg-gray-500 p-6 shadow-xl rounded-md'>
+                <form onSubmit={handleCreateUserWithEmailAndPassword} className='bg-gray-800 p-6 shadow-xl rounded-md'>
                     <div className="mb-6">
                         <input type="text" id="name" ref={nameRef} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Name" required />
                     </div>
@@ -66,16 +66,16 @@ const Signup = () => {
                             <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 bg-gray-400 rounded focus:ring-3 focus:ring-blue-300 " required />
                         </div>
                         <div className="ml-3 text-sm">
-                            <label for="terms" className="font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-white hover:underline dark:text-blue-500 italic">terms and conditions</a></label>
+                            <label for="terms" className="font-medium text-gray-50 dark:text-gray-300">I agree with the <a href="#" className="text-pink-500 hover:underline dark:text-blue-500 italic">terms and conditions</a></label>
                         </div>
                     </div>
                     <button type="submit" className="mb-6 text-white bg-pink-600 hover:bg-pink-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Register new account</button>
                     <br />
-                    <Link to='/login'> <small className='text-sm'>Already have an account? <span className='text-white font-semibold hover:underline italic'>Please Sign in.</span> </small></Link>
+                    <small className='text-sm text-gray-50'>Already have an account?<Link to='/login'> <span className='text-pink-500 hover:underline italic'>Please Sign in.</span></Link> </small>
 
                 </form>
             </div>
-        </div>
+        </div >
     );
 };
 
