@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Ashik's Click
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is live at [https://assignment-firebase-auth.web.app/](https://assignment-firebase-auth.web.app/).
 
 ## Available Scripts
 
