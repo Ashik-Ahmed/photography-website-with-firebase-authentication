@@ -10,6 +10,7 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Shared/Footer/Footer';
 import Checkout from './components/Checkout/Checkout';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
             </RequireAuth>
           }>
         </Route>
-
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
 
       {/* <Footer></Footer> */}
