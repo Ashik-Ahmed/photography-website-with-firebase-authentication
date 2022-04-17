@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div className='mt-12 bg-gray-700 md:h-screen text-white'>
+        <div className='mt-16 bg-gray-700 md:h-screen text-white'>
             <h2 className='text-3xl font-bold'>Homepage</h2>
             <div className=' justify-center my-4 md:px-36 bg-gray-800 py-6'>
                 <h2 className='text-3xl font-semibold font-mono'>Packages</h2>
 
                 <div className='md:flex'>
 
-                    <div class="mx-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    <div class="mx-4 max-w-sm bg-white rounded-lg border mb-4 md:mb-0 hover:bg-pink-100 hover:scale-110 duration-500 border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2021/12/pjimage-2021-12-09t211615-1639064783.jpg" alt="" />
                         </a>
@@ -28,7 +28,7 @@ const Home = () => {
 
 
 
-                    <div class="mx-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    <div class="mx-4 max-w-sm bg-white rounded-lg border mb-4 md:mb-0 hover:bg-pink-100 hover:scale-110 duration-500 border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2021/12/pjimage-2021-12-09t211615-1639064783.jpg" alt="" />
                         </a>
@@ -46,7 +46,7 @@ const Home = () => {
 
 
 
-                    <div class="mx-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    <div class="mx-4 max-w-sm bg-white rounded-lg border mb-4 md:mb-0 hover:bg-pink-100 hover:scale-110 duration-500 border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2021/12/pjimage-2021-12-09t211615-1639064783.jpg" alt="" />
                         </a>

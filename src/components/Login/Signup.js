@@ -1,14 +1,78 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
 
-    const nameRef = useRef();
-    const emailRef = useRef();
-    const passwordRef = useRef();
-    const confirmPasswordRef = useRef();
+    // handle user info in state 
+    const [userInfo, setUserInfo] = useState({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+    })
+
+    // handle errors in state 
+    const [errors, setErrors] = useState({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+    })
+
+    // validate and set the name
+    const handleNameChange = (e) => {
+        setUserInfo({ ...userInfo, name: e.target.value });
+    }
+
+    // validate and set the email
+    const handleEmailChange = (e) => {
+        const emailRegex = /\S+@\S+\.\S+/;
+        const validEmail = emailRegex.test(e.target.value);
+        if (validEmail) {
+            setUserInfo({ ...userInfo, email: e.target.value });
+            setErrors({ ...errors, email: "" })
+        }
+        else {
+            setErrors({ ...errors, email: "Email not Valid" });
+        }
+    }
+
+    // validate and set the password 
+    const handlePasswordChange = (e) => {
+        const passwordRegex = /.{6,}/;
+        const validPassword = passwordRegex.test(e.target.value);
+
+        if (validPassword) {
+            setUserInfo({ ...userInfo, password: e.target.value });
+            setErrors({ ...errors, password: "" });
+        }
+        else {
+            setErrors({ ...errors, password: "Password should at least 6 chracters long" });
+        }
+    }
+
+    // validate and set the confirm password field
+    const handleConfirmPasswordChange = (e) => {
+        const passwordRegex = /.{6,}/;
+        const validPassword = passwordRegex.test(e.target.value);
+
+        if (validPassword) {
+            if (userInfo.password === e.target.value) {
+                setUserInfo({ ...userInfo, confirmPassword: e.target.value });
+                setErrors({ ...errors, confirmPassword: "" });
+            }
+            else {
+                setErrors({ ...errors, confirmPassword: "Password didn't match" });
+            }
+        }
+        else {
+            setErrors({ ...errors, confirmPassword: "Password should at least 6 chracters long" });
+        }
+    }
 
     const [
         createUserWithEmailAndPassword,
@@ -21,45 +85,67 @@ const Signup = () => {
     const handleCreateUserWithEmailAndPassword = (e) => {
         e.preventDefault();
 
-        const name = nameRef.current.value;
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
-        const confirmPassword = confirmPasswordRef.current.value;
-
-        if (password === confirmPassword) {
-            createUserWithEmailAndPassword(email, password);
+        if (userInfo.password === userInfo.confirmPassword) {
+            createUserWithEmailAndPassword(userInfo.email, userInfo.password, { sendEmailVerification: true });
         }
 
         else {
             console.log("Password mismatch");
+            console.log(userInfo.password, userInfo.confirmPassword);
         }
     }
 
     useEffect(() => {
         if (user) {
-            console.log(user);
+            toast.success("Account created successfully. Please verify your account by clicking on the link sent to your email.");
         }
         else {
             console.error(error);
         }
     }, [user])
 
+
+    useEffect(() => {
+        if (error) {
+            switch (error?.code) {
+                case "auth/email-already-exists":
+                    toast.warn("Email already exist")
+                    break;
+                case "invalid-email":
+                    toast.warn("Invalid Email")
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    }, [error])
+
     return (
-        <div className='bg-gray-700 h-screen flex items-center justify-center'>
+        <div className='bg-gray-700 h-screen flex items-center justify-center mt-16'>
             <div className='md:w-1/4 mx-auto pt-6'>
                 <h1 className='text-lg font-semibold my-4 text-white'>Please Sign up</h1>
                 <form onSubmit={handleCreateUserWithEmailAndPassword} className='bg-gray-800 p-6 shadow-xl rounded-md'>
                     <div className="mb-6">
-                        <input type="text" id="name" ref={nameRef} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Name" required />
+                        <input type="text" id="name" onChange={handleNameChange} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Name" required />
                     </div>
                     <div className="mb-6">
-                        <input type="email" id="email" ref={emailRef} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Email" required />
+                        <input type="email" id="email" onChange={handleEmailChange} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Email" required />
+                        {
+                            errors?.email && <p className='text-red-500 text-left'>{errors.email}</p>
+                        }
                     </div>
                     <div className="mb-6">
-                        <input type="password" id="password" ref={passwordRef} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder='Password' required />
+                        <input type="password" id="password" onChange={handlePasswordChange} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder='Password' required />
+                        {
+                            errors?.password && <p className='text-red-500 text-left'>{errors.password}</p>
+                        }
                     </div>
                     <div className="mb-6">
-                        <input type="password" id="repeat-password" ref={confirmPasswordRef} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder='Confirm Password' required />
+                        <input type="password" id="repeat-password" onChange={handleConfirmPasswordChange} className="shadow-sm bg-gray-400 border-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder='Confirm Password' required />
+                        {
+                            errors?.confirmPassword && <p className='text-red-500 text-left'>{errors.confirmPassword}</p>
+                        }
                     </div>
                     <div className="flex items-start mb-6">
                         <div className="flex items-center h-5">
@@ -73,6 +159,7 @@ const Signup = () => {
                     <br />
                     <small className='text-sm text-gray-50'>Already have an account?<Link to='/login'> <span className='text-pink-500 hover:underline italic'>Please Sign in.</span></Link> </small>
 
+                    <ToastContainer />
                 </form>
             </div>
         </div >
