@@ -1,11 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Login = () => {
 
+    const location = useLocation();
+
     const navigate = useNavigate();
+    let from = location.state?.from?.pathname || "/";
 
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -32,7 +35,7 @@ const Login = () => {
 
     useEffect(() => {
         if (user) {
-            navigate('/');
+            navigate(from, { replace: true });
         }
     }, [user])
 

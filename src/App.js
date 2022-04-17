@@ -8,6 +8,8 @@ import About from './components/About/About';
 import Blogs from './components/Blogs/Blogs';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Shared/Footer/Footer';
+import Checkout from './components/Checkout/Checkout';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -20,9 +22,17 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/checkout'
+          element={
+            <RequireAuth>
+              <Checkout></Checkout>
+            </RequireAuth>
+          }>
+        </Route>
+
       </Routes>
 
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 }
