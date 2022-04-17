@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
@@ -45,7 +45,6 @@ const Signup = () => {
     const handlePasswordChange = (e) => {
         const passwordRegex = /.{6,}/;
         const validPassword = passwordRegex.test(e.target.value);
-
         if (validPassword) {
             setUserInfo({ ...userInfo, password: e.target.value });
             setErrors({ ...errors, password: "" });
@@ -74,52 +73,40 @@ const Signup = () => {
         }
     }
 
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-
-
+    // create user with email and password 
+    const [createUserWithEmailAndPassword, emailUser, emailLoading, emailError,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const handleCreateUserWithEmailAndPassword = (e) => {
         e.preventDefault();
-
         if (userInfo.password === userInfo.confirmPassword) {
-            createUserWithEmailAndPassword(userInfo.email, userInfo.password, { sendEmailVerification: true });
+            createUserWithEmailAndPassword(userInfo.email, userInfo.password);
         }
-
         else {
             console.log("Password mismatch");
             console.log(userInfo.password, userInfo.confirmPassword);
         }
     }
-
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    // handle successful and failed registration notification and redirect
     useEffect(() => {
-        if (user) {
+        if (emailUser) {
             toast.success("Account created successfully. Please verify your account by clicking on the link sent to your email.");
+            navigate(from, { replace: true });
         }
-        else {
-            console.error(error);
-        }
-    }, [user])
-
-
-    useEffect(() => {
-        if (error) {
-            switch (error?.code) {
-                case "auth/email-already-exists":
-                    toast.warn("Email already exist")
+        if (emailError) {
+            switch (emailError?.code) {
+                case "auth/email-already-in-use":
+                    toast.warn("Email already exist ")
                     break;
-                case "invalid-email":
+                case "auth/invalid-email":
                     toast.warn("Invalid Email")
                     break;
-
                 default:
                     break;
             }
         }
-    }, [error])
+    }, [emailUser, emailError])
 
     return (
         <div className='bg-gray-700 h-screen flex items-center justify-center mt-16'>
