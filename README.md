@@ -9,7 +9,6 @@ You will find below features in this website:
 * Exciting Wedding photography packages
 * You will find all type of services I provide
 * A short introduction on me
-* My previous work sample
 * My real client reviews
 * You need to create account to order
 
@@ -23,3 +22,4 @@ You will find below features in this website:
 * Toastify for showing toast message
 * React Icons
 * Custom Hook
+* Environment variable

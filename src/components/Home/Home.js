@@ -49,7 +49,7 @@ const Home = () => {
 
 
             <div className='mt-8'>
-                <h3 className='text-3xl font-semibold font-mono border-b-4'>My Clients Feedback</h3>
+                <h3 className='text-3xl font-semibold font-mono border-b-4'>What People Say About My Work</h3>
 
                 <div className='md:grid grid-cols-2 py-4 md:mx-32'>
                     {
