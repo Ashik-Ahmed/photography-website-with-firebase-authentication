@@ -23,9 +23,21 @@ const About = () => {
             </div>
 
             <div className='py-10 md:mx-20'>
-                <h2 className='text-3xl font-bold'>My Vision</h2>
-                <p>I am working as a photographer for the last 15 years. I am aiming to be on top 5 photographer of the world. I always try to do my best according to my clients requirement. Although, I have achieved so many awards, I am working hard to improve myself day by day. I am also doing wild photographies, sports photographies, event photographies and also sometime work for different journals to get experience in different photographies. I wish this hardwork will help me to achieve my goal one day.</p>
+                <h2 className='text-3xl font-bold border-b-4 mb-4'>My Vision</h2>
+                <p className='italic'>I am working as a photographer for the last 15 years. I am aiming to be on top 5 photographer of the world. I always try to do my best according to my clients requirement. Although, I have achieved so many awards, I am working hard to improve myself day by day. I am also doing wild photographies, sports photographies, event photographies and also sometime work for different journals to get experience in different photographies. I wish this hardwork will help me to achieve my goal one day.</p>
             </div>
+
+            <div className='py-8 flex justify-center'>
+                <div className='text-left'>
+                    <h2 className='text-3xl font-semibold mb-4 border-b-4'>Contact Me</h2>
+                    <p>Phone: +8801521464568</p>
+                    <p>Email: ashikahmed121@gmail.com</p>
+                    <p>Office Hours:</p>
+                    <p>Sun -Thu : 9:00AM - 5:00PM</p>
+                </div>
+            </div>
+
+
         </div>
     );
 };
