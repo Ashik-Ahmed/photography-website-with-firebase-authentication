@@ -9,7 +9,7 @@ const Services = () => {
     console.log("Services Page");
     return (
         <div className='bg-gray-700 h-fit mt-16'>
-            <h2 className='text-white text-3xl'>This is services Page</h2>
+            <h2 className='text-white text-3xl mb-8'>Choose your best match</h2>
 
             <div className='md:grid grid-cols-3 gap-4 my-4 md:mx-32'>
                 {

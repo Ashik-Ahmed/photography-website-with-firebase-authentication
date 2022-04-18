@@ -1,6 +1,6 @@
 .home-banner {
-    background-image: url('../../Images/bannerBG.png');
+    background-image: url('../../Images/HomeBanner.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 150px -100px;
+    background-size: contain;
+    background-position: 00px auto;
 }

@@ -4,19 +4,17 @@ import { Link } from 'react-router-dom';
 const ServiceCard = (props) => {
 
     const { name, img, price, description } = props.service;
-
-    console.log(name, price, img);
     return (
         <div>
 
-            <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div className="bg-white rounded-lg border border-gray-200 shadow-md hover:scale-110 duration-500">
 
                 <img className="rounded-t-lg h-60 w-full" src={img} alt="" />
 
                 <div className="p-5">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
-                    <div className='flex justify-center'>
-                        <ol className='list-disc'>
+                    <div className='flex justify-center text-black'>
+                        <ol className='list-disc text-gray-600'>
                             {
                                 description.map(desc => <li className='text-left'>{desc}</li>)
                             }
