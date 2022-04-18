@@ -6,7 +6,6 @@ const Services = () => {
 
     const [services, setServices] = useServices();
 
-    console.log("Services Page");
     return (
         <div className='bg-gray-700 h-fit mt-16'>
             <div className='py-6'>
