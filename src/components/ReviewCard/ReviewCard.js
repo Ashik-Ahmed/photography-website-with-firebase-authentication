@@ -22,7 +22,7 @@ const ReviewCard = (props) => {
                 {/* Showing blog details full/short on button click */}
                 {
                     description.length > 200 ? (
-                        seeMore ? (<p className='italic  text-sm'>{description}<button onClick={handleSeeMore} className='text-red-700 font-bold'>...See Less</button></p>) : <p className='italic  text-sm'>{description.slice(0, 200)}<button onClick={handleSeeMore} className='text-red-700 font-bold'>...See More</button></p>
+                        seeMore ? (<p className='italic  text-sm'>{description}<button onClick={handleSeeMore} className='text-pink-700 font-bold'>...See Less</button></p>) : <p className='italic  text-sm'>{description.slice(0, 200)}<button onClick={handleSeeMore} className='text-pink-700 font-bold'>...See More</button></p>
                     )
                         :
                         <p className='italic text-sm' >{description}</p>

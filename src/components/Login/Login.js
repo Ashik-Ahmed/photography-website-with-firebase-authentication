@@ -80,24 +80,40 @@ const Login = () => {
         signInWithGithub();
     }
 
+    const [resetCall, setResetCall] = useState(false);
     // Handle Password Reset 
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
     const handleResetPassword = async () => {
         if (userInfo.email) {
             await sendPasswordResetEmail(userInfo.email);
             // toast.success("Password reset email has sent");
-            console.log("Password reset email sent")
+            // console.log("Password reset email sent")
+            setResetCall(true);
         }
         else {
             setErrors({ ...errors, email: "Enter an email" });
         }
     }
-    // handle reset password error notification 
-    if (resetError) {
-        if (resetError.message.includes("user-not-found")) {
-            toast("No account with this email")
+    // handle reset password error and success toast 
+    useEffect(() => {
+        if (resetCall) {
+            if (resetError) {
+                if (resetError.message.includes("user-not-found")) {
+                    toast("No account with this email")
+                }
+                else if (resetError.message.includes("auth/invalid-email")) {
+                    toast.warn("Email not valid");
+                }
+                else {
+                    toast.warn("Something went wrong")
+                }
+            }
+            else {
+                toast.success("Password reset email sent");
+            }
+            setResetCall(false);
         }
-    }
+    }, [resetCall])
 
     // getting the current user state 
     const [authUser, authLoading, authError] = useAuthState(auth);

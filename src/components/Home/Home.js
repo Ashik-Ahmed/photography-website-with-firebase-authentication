@@ -29,29 +29,35 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className=' justify-center md:px-36  py-6'>
-                <h2 className='text-3xl font-semibold font-mono my-6'>Wedding Packages</h2>
-                <div className='md:grid grid-cols-3 gap-4 my-4 md:mx-20'>
+            <div>
+                <h2 className='text-3xl font-semibold font-mono my-6 border-b-4'>Wedding Packages</h2>
+                <div className=' justify-center md:px-36'>
+                    <div className='md:grid grid-cols-3 gap-4 my-4 md:mx-20'>
+                        {
+                            services.slice(0, 3).map(service => <ServiceCard key={service.id} service={service}></ServiceCard>)
+                        }
+                    </div>
+
+                    <div className='text-right'>
+                        <Link to='/services' class="inline-flex items-center mt-4 p-2 px-3 text-sm font-medium text-center text-white bg-pink-500 rounded-lg hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Explore All Package
+                            <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className='mt-8'>
+                <h3 className='text-3xl font-semibold font-mono border-b-4'>My Clients Feedback</h3>
+
+                <div className='md:grid grid-cols-2 py-4 md:mx-32'>
                     {
-                        services.slice(0, 3).map(service => <ServiceCard key={service.id} service={service}></ServiceCard>)
+                        reviews.slice(0, 2).map(review => <ReviewCard key={review.id} review={review}></ReviewCard>)
                     }
                 </div>
 
-                <div className='text-right'>
-                    <Link to='/services' class="inline-flex items-center mt-4 p-2 px-3 text-sm font-medium text-center text-white bg-pink-500 rounded-lg hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Explore All Package
-                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </Link>
-                </div>
             </div>
-
-
-            <div className='md:grid grid-cols-2 py-4 md:mx-32'>
-                {
-                    reviews.slice(0, 2).map(review => <ReviewCard key={review.id} review={review}></ReviewCard>)
-                }
-            </div>
-
 
         </div>
     );
