@@ -21,4 +21,5 @@ You will find below features in this website:
 * Tailwind for CSS framework
 * Flowbite as a Tailwind library
 * Toastify for showing toast message
+* React Icons
 

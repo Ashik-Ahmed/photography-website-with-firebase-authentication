@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Juho Kujala",
+    "img": "https://randomuser.me/api/portraits/med/men/92.jpg",
+    "description": "Easily the best experience with a photographer to date! Ashik is super personable and very talented at his craft. He made sure everyone was comfortable and enjoying the experience. Thanks Ashik!",
+    "rating": 4.7
+  },
+  {
+    "id": 2,
+    "name": "Thijme Proper",
+    "img": "https://randomuser.me/api/portraits/med/men/2.jpg",
+    "description": "I am so glad that I stumbled across Ashik Photography. I can’t say enough about how professional Ashik is and the quality of work that he provides. I was so pleased with my session and final photographs, that I will continue to use him in the future",
+    "rating": 4.8
+  },
+  {
+    "id": 3,
+    "name": "Primo Nogueira",
+    "img": "https://randomuser.me/api/portraits/med/men/71.jpg",
+    "description": "Ashik is a wonderful man and truly a professional in his field. He was instantly able to put my family at ease, and capture some captivating photographs. I will treasure them forever. I simply cannot recommend him enough!",
+    "rating": 4.4
+  },
+  {
+    "id": 4,
+    "name": "June Fossli",
+    "img": "https://randomuser.me/api/portraits/med/women/86.jpg",
+    "description": "Ashik was the best photographer I have ever hired. On time. Followed through on everything he said he would do. Would highly recommend him to family, friends and business associates",
+    "rating": 4.7
+  },
+  {
+    "id": 5,
+    "name": "Tracey Campbell",
+    "img": "https://randomuser.me/api/portraits/med/women/15.jpg",
+    "description": "Great photographer to work with. Ashik was energetic, engaging, and a lot of fun! We love our wedding pictures!",
+    "rating": 4.2
+  },
+  {
+    "id": 6,
+    "name": "Amy Warren",
+    "img": "https://randomuser.me/api/portraits/med/women/66.jpg",
+    "description": "Ashik is super creative and is genuinely a nice guy. Great to work with!",
+    "rating": 4.9
+  },
+  {
+    "id": 7,
+    "name": "Victoria Prieto",
+    "img": "https://randomuser.me/api/portraits/med/women/33.jpg",
+    "description": "Ashik is an extremely personable individual, with an artistic eye, he will make your experience memorable!!",
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "name": "Nalan Taşçı",
+    "img": "https://randomuser.me/api/portraits/med/women/1.jpg",
+    "description": "Ashik has an amazing eye and is so easy to work with. Don’t pass up the chance to work with him!",
+    "rating": 4
+  },
+  {
+    "id": 9,
+    "name": "Joel Maunu",
+    "img": "https://randomuser.me/api/portraits/med/men/55.jpg",
+    "description": "There just aren’t enough words to possibly describe how amazing each and every photo that taryn snaps. She has a magical way of finding the perfect angle, lighting and of course expressions.",
+    "rating": 4.5
+  },
+  {
+    "id": 10,
+    "name": "Eline Moulin",
+    "img": "https://randomuser.me/api/portraits/med/women/5.jpg",
+    "description": "Ashik creates magic. She has captured the most special moments of my family’s life. I would never hesitate to recommend her to anyone who wants a true professional to create a customized photography experience.",
+    "rating": 4.2
+  }
+]
