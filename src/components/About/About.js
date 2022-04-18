@@ -8,12 +8,12 @@ const About = () => {
     return (
         <div className='mt-16 h-fit bg-gray-600 text-white'>
             <div className='md:flex md:justify-around items-center banner'>
-                <div className='w-1/3 h-full'>
+                <div className='md:w-1/3 h-full'>
                     <img className='' src={cover} alt="" />
                 </div>
-                <div className='h-full  font-bold'>
+                <div className='h-full font-bold text-pink-600 md:text-white'>
                     <div>
-                        <h1 className='text-7xl italic'>Ashik Ahmed</h1>
+                        <h1 className='text-7xl italic border-b-4'>Ashik Ahmed</h1>
                         <p className='text-xl italic font-mono mt-2'>- a professional photographer</p>
                     </div>
                     <div>

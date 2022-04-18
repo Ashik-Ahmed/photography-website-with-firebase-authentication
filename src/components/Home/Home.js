@@ -13,8 +13,8 @@ const Home = () => {
     const [services, setServices] = useServices();
 
     return (
-        <div className='pt-16 bg-gray-700 md:h-fit text-white'>
-            <div className='bg-white md:h-96 text-left md:flex md:items-center justify-around text-gray-700'>
+        <div className='pt-16 bg-gray-800 md:h-fit text-white'>
+            <div className='bg-white md:h-fit text-left md:flex md:items-center justify-around text-gray-700'>
                 <div className='md:w-1/4'>
                     <img src={banner} alt="" />
                 </div>
@@ -29,7 +29,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className=' justify-center md:px-36 bg-gray-800 py-6'>
+            <div className=' justify-center md:px-36  py-6'>
                 <h2 className='text-3xl font-semibold font-mono my-6'>Wedding Packages</h2>
                 <div className='md:grid grid-cols-3 gap-4 my-4 md:mx-20'>
                     {
@@ -46,9 +46,9 @@ const Home = () => {
             </div>
 
 
-            <div className='md:grid grid-cols-3 my-4 md:mx-32'>
+            <div className='md:grid grid-cols-2 py-4 md:mx-32'>
                 {
-                    reviews.map(review => <ReviewCard key={review.id} review={review}></ReviewCard>)
+                    reviews.slice(0, 2).map(review => <ReviewCard key={review.id} review={review}></ReviewCard>)
                 }
             </div>
 

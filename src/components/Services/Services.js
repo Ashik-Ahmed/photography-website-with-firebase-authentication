@@ -9,8 +9,10 @@ const Services = () => {
     console.log("Services Page");
     return (
         <div className='bg-gray-700 h-fit mt-16'>
-            <h2 className='text-white text-3xl mb-8'>Choose your best match</h2>
+            <div className='py-6'>
+                <h2 className='text-white text-3xl'>Choose the best match for you</h2>
 
+            </div>
             <div className='md:grid grid-cols-3 gap-4 my-4 md:mx-32'>
                 {
                     services.map(service => <ServiceCard key={service.id} service={service}></ServiceCard>)

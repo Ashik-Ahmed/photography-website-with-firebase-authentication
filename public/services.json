@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Package 1",
+    "name": "Wedding Package 1",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
@@ -17,7 +17,7 @@
   },
   {
     "id": 2,
-    "name": "Package 2",
+    "name": "Wedding Package 2",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
@@ -33,7 +33,7 @@
   },
   {
     "id": 3,
-    "name": "Package 3",
+    "name": "Wedding Package 3",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
@@ -49,7 +49,7 @@
   },
   {
     "id": 4,
-    "name": "Package 4",
+    "name": "Day Long Package 4",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
@@ -65,7 +65,7 @@
   },
   {
     "id": 5,
-    "name": "Package 5",
+    "name": "Event Capture Package 5",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
@@ -81,7 +81,7 @@
   },
   {
     "id": 6,
-    "name": "Package 6",
+    "name": "Tour cover Package 6",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
@@ -97,7 +97,7 @@
   },
   {
     "id": 7,
-    "name": "Package 7",
+    "name": "Special Package 7",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
@@ -113,7 +113,7 @@
   },
   {
     "id": 8,
-    "name": "Package 8",
+    "name": "Special Package 8",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
@@ -129,7 +129,7 @@
   },
   {
     "id": 9,
-    "name": "Package 9",
+    "name": "Special Package 9",
     "type": "wedding",
     "img": "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     "description": [
