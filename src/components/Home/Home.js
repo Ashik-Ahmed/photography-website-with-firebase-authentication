@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useReviews from '../../Hooks/useReviews';
+import ReviewCard from '../ReviewCard/ReviewCard';
 import './Home.css'
 
 const Home = () => {
+
+    const [reviews, setReviews] = useReviews();
+
     return (
         <div className='pt-16 bg-gray-700 md:h-fit text-white'>
             <div className='home-banner md:h-96 text-left md:flex md:items-center'>
@@ -18,7 +23,7 @@ const Home = () => {
             </div>
 
             <div className=' justify-center md:px-36 bg-gray-800 py-6'>
-                <h2 className='text-3xl font-semibold font-mono my-6'>Packages</h2>
+                <h2 className='text-3xl font-semibold font-mono my-6'>Wedding Packages</h2>
                 <div className='md:flex'>
                     <div class="mx-4 max-w-sm bg-white rounded-lg border mb-4 md:mb-0 hover:bg-pink-100 hover:scale-110 duration-500 border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
@@ -83,7 +88,11 @@ const Home = () => {
             </div>
 
 
-
+            <div className='md:grid grid-cols-3 my-4 md:mx-32'>
+                {
+                    reviews.map(review => <ReviewCard key={review.id} review={review}></ReviewCard>)
+                }
+            </div>
 
 
         </div>

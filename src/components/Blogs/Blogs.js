@@ -7,9 +7,10 @@ const Blogs = () => {
                 <div>
                     <h3 className='text-2xl text-left my-4 text-white font-semibold'>1.	Difference between Authentication and Authorization:</h3>
 
-                    <div class=" shadow-md rounded-lg ">
-                        <table class=" w-full md:w-3/4 text-left text-gray-200 border ">
-                            <thead class="bg-gray-800  uppercase  ">
+                    <div class="shadow-md rounded-lg ">
+                        {/* <table class="w-full table-auto md:w-3/4 text-left text-gray-200 border "> */}
+                        <table className='table-auto border-2 w-full text-gray-200 text-left'>
+                            <thead class="bg-gray-800 uppercase">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Authentication
@@ -20,7 +21,7 @@ const Blogs = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class=" border-b hover:bg-gray-800 ">
+                                <tr class=" border-b hover:bg-gray-700 ">
                                     <td scope="row" class="px-6 py-4 whitespace-nowrap">
                                         Confirms users are who they say they are
                                     </td>
@@ -28,7 +29,7 @@ const Blogs = () => {
                                         Give users permission to access a resource
                                     </td>
                                 </tr>
-                                <tr class="border-b hover:bg-gray-800 ">
+                                <tr class="border-b hover:bg-gray-700 ">
                                     <td scope="row" class="px-6 py-4 whitespace-nowrap">
                                         It works through PIN, OTP, password biometrics or apps
                                     </td>
@@ -36,7 +37,7 @@ const Blogs = () => {
                                         It works through settings maintained by security teams
                                     </td>
                                 </tr>
-                                <tr class=" hover:bg-gray-800 ">
+                                <tr class=" hover:bg-gray-700 ">
                                     <td scope="row" class="px-6 py-4 whitespace-nowrap">
                                         Transmits info through an ID Token
                                     </td>
@@ -44,7 +45,7 @@ const Blogs = () => {
                                         Transmits info through an Access Token
                                     </td>
                                 </tr>
-                                <tr class=" hover:bg-gray-800 border">
+                                <tr class=" hover:bg-gray-700 border">
                                     <td scope="row" class="px-6 py-4 whitespace-nowrap">
                                         Partially changeable by user
                                     </td>
